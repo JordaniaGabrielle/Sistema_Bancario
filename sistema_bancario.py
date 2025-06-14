@@ -1,6 +1,7 @@
 def estetica():
     print(20*'=+=')
 
+
 estetica()
 
 print('Bem-vindo ao banco Santander\nQual operação gostaria de realizar?')
@@ -18,6 +19,7 @@ limite_saque = 3
 deposito_conta_bancaria = 0
 historico = []
 
+
 def Deposito(deposito_conta_bancaria):
     global valor
 
@@ -28,8 +30,9 @@ def Deposito(deposito_conta_bancaria):
     else:
         print('Erro ao depositar, O valor é negativo.')
 
+
 def Saque(saque):
-    global valor, limite_saque, cont
+    global valor, cont
 
     valor_insuficiente = saque > valor
 
@@ -38,7 +41,8 @@ def Saque(saque):
     limite_valor = saque > limite
 
     if valor_insuficiente:
-        print(f'O valor: R$ {saque} excede o valor existente na conta bancária')
+        print(f'O valor: R$ {saque} excede o valor existente '
+              f'na conta bancária')
 
     elif limite_saq:
         print('Limite de saque diário excedido')
@@ -46,12 +50,13 @@ def Saque(saque):
     elif limite_valor:
         print('O limite diário de R$ 500 foi atingido')
 
-    elif saque <= valor :
+    elif saque <= valor:
         valor -= saque
         print(f'Debitado {saque}')
 
         historico.append(f'{saque} Sacado')
         cont += 1
+
 
 while True:
     opcao = input(menu).upper()
