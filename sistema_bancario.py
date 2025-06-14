@@ -3,7 +3,7 @@ def estetica():
 
 estetica()
 
-print('Bem-Vindo ao banco Santader\nQual operação gostaria de realizar')
+print('Bem-vindo ao banco Santander\nQual operação gostaria de realizar?')
 menu = """
 [D] Depósito
 [S] Saque
@@ -15,16 +15,16 @@ valor = 0
 cont = 0
 limite = 500
 limite_saque = 3
-deposito_conta_bacaria = 0
+deposito_conta_bancaria = 0
 historico = []
 
 def Deposito(deposito_conta_bancaria):
     global valor
 
-    if deposito_conta_bacaria > 0:
-        valor += deposito_conta_bacaria
+    if deposito_conta_bancaria > 0:
+        valor += deposito_conta_bancaria
 
-        historico.append(f'{deposito_conta_bacaria} Depositado')
+        historico.append(f'{deposito_conta_bancaria} Depositado')
     else:
         print('Erro ao depositar, O valor é negativo.')
 
@@ -38,14 +38,14 @@ def Saque(saque):
     limite_valor = saque > limite
 
     if valor_insuficiente:
-        print(f'O valor:{saque}R$ excede o valor existente na conta bancaria')
+        print(f'O valor: R$ {saque} excede o valor existente na conta bancária')
 
     elif limite_saq:
-        print('Limite de saque diario excedido')
-        
+        print('Limite de saque diário excedido')
+
     elif limite_valor:
-        print('O limite diario R$ foi atingido')
-        
+        print('O limite diário de R$ 500 foi atingido')
+
     elif saque <= valor :
         valor -= saque
         print(f'Debitado {saque}')
@@ -58,13 +58,13 @@ while True:
     estetica()
     # Deposito
     if opcao == 'D':
-        deposito_conta_bacaria = float(input('Valor do deposito:  '))
+        deposito_conta_bancaria = float(input('Valor do depósito: '))
 
-        Deposito(deposito_conta_bacaria)
+        Deposito(deposito_conta_bancaria)
 
     # Saque
     elif opcao == 'S':
-        saque = float(input('Valor de Saque:  '))
+        saque = float(input('Valor de Saque: '))
         Saque(saque)
 
     # Extrato
@@ -77,7 +77,7 @@ while True:
         input()
     # Saldo
     elif opcao == 'T':
-        print(f'Saldo:{valor}R$')
+        print(f'Saldo: R$ {valor}')
     # Sair
     elif opcao == 'F':
         break
