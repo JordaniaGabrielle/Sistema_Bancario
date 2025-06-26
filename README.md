@@ -12,7 +12,7 @@ Este é um sistema bancário simples desenvolvido em Python, permitindo operaç�
 - Interface interativa via terminal
 
 ## 🛠 Tecnologias Usadas
-- Python 3.x
+- Python 3
 
 ## 📦 Instalação
 1. Clone o repositório: 
